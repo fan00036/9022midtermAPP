@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.edumedia.fan00036.helen9022midterm.CordovaApp { <init>(...); }
+
