@@ -7,6 +7,10 @@
     margin:0;
     box-sizing:border-box;
     font-family:'Open Sans', sans-serif;
+   
+}
+body{
+     background-color: #333;
 }
 h2{
     font-size:1.6rem;
@@ -19,6 +23,7 @@ p{
 .wrapper{
     width:100%;
     height:100%;
+    background-color: #666;
 }
 /*************************************
  Layout
@@ -76,10 +81,10 @@ input, select{
     width:40rem;
 }
 #mapPage{
-    height:100%;
+    min-height:100%;
 }
 #home{
-    height:100%;
+    min-height:100%;
 }
 /*************************************
  Pages
@@ -148,10 +153,21 @@ input, select{
  Modals
  *************************************/
 
-#map-canvas{
+
+@media screen and (max-width: 400px) {
+   #map-canvas{
     height: 500px;
     width: 300px;
     margin: 0 auto;
-    margin-top: 10px;
-    
+    margin-top: 10px;  
+}
+}
+
+@media screen and (min-width: 401px) {
+   #map-canvas{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 10px;  
+}
 }

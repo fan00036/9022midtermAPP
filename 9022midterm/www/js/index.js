@@ -71,7 +71,7 @@ function onSuccess(contacts) {
     //console.log(contacts);
     var persons = [];
     
-    var personCount = 0;
+    var personCount = 1;
     //var list = '';
     
     //alert("xxxx");
@@ -117,7 +117,7 @@ function onSuccess(contacts) {
     
     
     localStorage.setItem("persons", JSON.stringify(persons));
-    //console.log("persons===="+JSON.stringify(persons));
+    
     
     //document.querySelector('[data-role=listview]').innerHTML = list;
 };
@@ -142,7 +142,7 @@ function loadPage(url) {
         //home page first call
         pages[0].className = 'active';
         //alert("xxxx");
-        showContacts();
+        //showContacts();
         
         history.replaceState(null, null, "#home");
     } else {
@@ -214,7 +214,7 @@ function addHammerRecognizer(theElement) {
 function showContacts() {
     
     persons = [];
-    ev.preventDefault();
+   // ev.preventDefault();
     
     if (localStorage.getItem("persons")) {
         persons = JSON.parse(localStorage.getItem("persons"));
@@ -242,7 +242,7 @@ function showContacts() {
 function showDetails(ev) {
     
     persons = [];
-    ev.preventDefault();
+    //ev.preventDefault();
     
     
     document.querySelector("[data-role=modal]").style.display = "block";
@@ -269,11 +269,11 @@ function showDetails(ev) {
         
         
     }
-    //document.querySelector("#output").innerHTML = itemVal;
+  
 };
 
 function displayInfo(person) {
-    //console.log(person);
+    console.log(person);
     var info = '<ul>'
     if (person.displayName != null) {
         info += '<li>' + 'Name: ' + person.displayName + '</li>';
@@ -297,6 +297,7 @@ function displayInfo(person) {
         }
     }
     info += '</ul>';
+    console.log(info);
     document.querySelector('#output').innerHTML = info;
 };
 
@@ -306,6 +307,7 @@ function displayInfo(person) {
 
 function showDynamicMap(ev) {
     ev.preventDefault();
+     document.querySelector("[data-role=overlay]").style.display = "block";
     // Try HTML5 geolocation
     
     persons = [];
@@ -406,6 +408,7 @@ function scc(position) {
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     google.maps.event.addListener(map, 'dblclick', addMarker);
     google.maps.event.addListener(map, 'dblclick', savePersonLocation);
+     document.querySelector("[data-role=overlay]").style.display = "none";
     checkPersonLan();
     
 }
@@ -507,7 +510,7 @@ function deleteMarkers() {
 
 
 
-google.maps.event.addDomListener(window, 'load', initialize);
+//google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
