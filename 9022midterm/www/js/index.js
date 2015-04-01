@@ -42,6 +42,7 @@ function intfunc() {
     
     document.getElementById("btnCancel").addEventListener("click", cancel);
     document.getElementById("btnBack").addEventListener("click", backToHome);
+    document.addEventListener("backbutton",backToHome,false);
     //document.getElementById("clearmarker").addEventListener("click", clearmarkerstest);
     
     
@@ -201,6 +202,7 @@ function addHammerRecognizer(theElement) {
           showDetails(ev);
           
           });
+      //  mc.on("singletap", showDetails);
     mc.on("doubletap", function (ev) {
           //showDynamicMap(ev);
           loadPage("mapPage");
